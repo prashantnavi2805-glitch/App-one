@@ -16,7 +16,7 @@ const challenges = [
     id: "aptitude-sprint",
     title: "Aptitude Sprint",
     image: PlaceHolderImages.find((img) => img.id === "aptitude-sprint"),
-    href: "#",
+    href: "/challenge/aptitude-sprint",
   },
 ];
 
