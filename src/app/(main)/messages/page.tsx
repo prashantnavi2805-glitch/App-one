@@ -41,7 +41,7 @@ const messagesData = {
 type User = typeof users[0];
 
 export default function MessagesPage() {
-    const [selectedUser, setSelectedUser] = useState<User | null>(users[0]);
+    const [selectedUser, setSelectedUser] = useState<User | null>(null);
     const [searchTerm, setSearchTerm] = useState('');
 
     const filteredUsers = users.filter(user => user.name.toLowerCase().includes(searchTerm.toLowerCase()));
