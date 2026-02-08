@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Search, MoreHorizontal } from "lucide-react";
+import { Swords, Search, MoreHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/", label: "Search", icon: Search },
+  { href: "/", label: "Arena", icon: Swords },
+  { href: "/search", label: "Search", icon: Search },
   { href: "/more", label: "More", icon: MoreHorizontal },
 ];
 
@@ -26,13 +27,6 @@ export function BottomNav() {
               <span className={cn("text-xs font-medium", isActive && "text-primary")}>
                 {item.label}
               </span>
-              {item.badge && (
-                <div className="absolute -top-1 -right-3">
-                    <span className="relative flex h-5 min-w-[1.25rem] items-center justify-center rounded-full bg-primary px-1.5 text-xs font-medium text-primary-foreground">
-                        {item.badge}
-                    </span>
-                </div>
-              )}
             </Link>
           );
         })}
