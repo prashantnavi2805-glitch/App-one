@@ -1,10 +1,10 @@
 'use client';
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Flame, Swords, Trophy, ShieldAlert } from "lucide-react";
+import { Flame, Swords, Trophy, ShieldAlert, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 // Mock data for user profiles - in a real app this would be fetched from a database
@@ -25,6 +25,7 @@ const recentMatches = [
 
 export default function UserProfilePage() {
     const params = useParams();
+    const router = useRouter();
     const username = params.username as string;
     const user = userProfiles[username];
 
@@ -33,15 +34,21 @@ export default function UserProfilePage() {
             <div className="container mx-auto px-4 py-6 text-center h-[80vh] flex flex-col items-center justify-center">
                 <h1 className="text-4xl font-headline text-foreground">User not found</h1>
                 <p className="text-muted-foreground mt-2">Could not find a profile for @{username}</p>
-                <Button asChild className="mt-6">
-                    <Link href="/search">Back to Connect</Link>
+                <Button onClick={() => router.back()} className="mt-6">
+                    <ArrowLeft className="mr-2" /> Go Back
                 </Button>
             </div>
         )
     }
 
     return (
-        <div className="container mx-auto px-4 py-6 space-y-8 max-w-2xl">
+        <div className="container mx-auto px-4 py-6 space-y-4 max-w-2xl">
+            <div>
+                <Button variant="ghost" size="icon" onClick={() => router.back()}>
+                    <ArrowLeft />
+                    <span className="sr-only">Back</span>
+                </Button>
+            </div>
             {/* Profile Header */}
             <Card className="overflow-hidden">
                 <div className="bg-muted h-24" />
