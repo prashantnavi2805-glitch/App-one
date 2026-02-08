@@ -10,11 +10,13 @@ const challenges = [
     id: "logic-puzzle",
     title: "Logic Puzzle",
     image: PlaceHolderImages.find((img) => img.id === "logic-puzzle"),
+    href: "/challenge/logic-puzzle",
   },
   {
     id: "aptitude-sprint",
     title: "Aptitude Sprint",
     image: PlaceHolderImages.find((img) => img.id === "aptitude-sprint"),
+    href: "#",
   },
 ];
 
@@ -43,7 +45,7 @@ export function TodayChallenge() {
                   </CardTitle>
                   <div className="flex justify-end mt-2">
                     <Button asChild variant="default" className="rounded-full bg-white text-black hover:bg-gray-200">
-                      <Link href="#">
+                      <Link href={challenge.href || "#"}>
                         Start Now <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
