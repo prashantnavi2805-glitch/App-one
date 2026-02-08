@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Swords, Trophy, ListChecks, Users, MoreHorizontal } from "lucide-react";
+import { Swords, Search, Users, MoreHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/", label: "Arena", icon: Swords },
-  { href: "/compete", label: "Compete", icon: Trophy },
-  { href: "/quests", label: "Quests", icon: ListChecks, badge: "2/3" },
+  { href: "/search", label: "Search", icon: Search },
   { href: "/feed", label: "Feed", icon: Users },
   { href: "/more", label: "More", icon: MoreHorizontal },
 ];
