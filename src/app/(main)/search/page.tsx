@@ -1,5 +1,5 @@
 import { Input } from "@/components/ui/input";
-import { Search as SearchIcon, Users } from "lucide-react";
+import { Users } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -13,9 +13,9 @@ const recentSearches = [
 export default function SearchPage() {
     return (
         <div className="container mx-auto px-4 py-6 space-y-8">
-            <h1 className="text-4xl font-headline text-foreground">Search</h1>
+            <h1 className="text-4xl font-headline text-foreground">Connect</h1>
             <div className="relative">
-                <SearchIcon className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Users className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <Input
                     type="search"
                     placeholder="Search for users..."
